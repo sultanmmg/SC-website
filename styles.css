@@ -1,0 +1,288 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+header {
+    background: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 2px solid #ff0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    width: 300px;
+    height: auto;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 13px;
+    position: relative; /* Ny */
+}
+
+header nav ul li:not(:last-child)::after { /* Ny */
+    content: ""; /* Ny */
+    display: block; /* Ny */
+    position: absolute; /* Ny */
+    right: -15px; /* Ny */
+    top: 0; /* Ny */
+    bottom: 0; /* Ny */
+    width: 2px; /* Ny */
+    background-color: #ff0000; /* Ny */
+} 
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ff0000;
+}
+
+.hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 30px;
+    background: #ff000052;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 44px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 2px;
+    transition: background 0.3s ease-in-out;
+}
+
+.hero .btn:hover {
+    background: #ffffff;
+    color: #ff0000;
+}
+
+.services, .about, .contact, .team {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services h2, .about h2, .contact h2, .team h2 {
+    margin-bottom: 30px;
+    font-size: 50px;
+    color: #d60000;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.about {
+    background: url('background-image.jpg'), url('background-image.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom right, top left;
+    background-size: 30%, 30%;
+    position: relative;
+    padding: 60px 20px;
+    overflow: hidden; /* For å forhindre rulling */
+    animation: animateBackground 10s infinite alternate; /* Flytt animasjonen her */
+ 
+}
+
+/* Animasjon for å få bakgrunnsbildet til å bevege seg */
+@keyframes animateBackground {
+    0% { background-position: bottom right, top left; } /* Startposisjoner */
+    50% { background-position: bottom 20px right 20px, top -20px left -20px; } /* Bevegelsesposisjoner */
+    100% { background-position: bottom right, top left; } /* Tilbake til startposisjoner */
+}
+
+.about {
+    animation: animateBackground 10s infinite alternate; /* Ny */
+}
+
+
+
+.about .about-content {
+    max-width: 60%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 50px;
+    border-radius: 10px;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.contact {
+    background-color: #111111;
+    padding: 60px 20px;
+    position: relative;
+}
+/* Kontakt Oss Styles */
+.contact form {
+    display: flex;
+    flex-direction: column; /* Plasserer inputfeltene under hverandre */
+    align-items: center; /* Sentraliserer inputfeltene horisontalt */
+    gap: 15px; /* Avstand mellom feltene */
+}
+
+.contact form input, 
+.contact form textarea, 
+.contact form button {
+    width: 80%; /* Symmetrisk bredde for alle felter */
+    max-width: 400px; /* Maksimal bredde for større skjermer */
+    padding: 10px;
+    margin-bottom: 0; /* Fjern bunnmarginen da vi bruker gap */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact form textarea {
+    height: 100px; /* Mindre høyde */
+    resize: none; /* Fjern muligheten for å endre størrelse */
+}
+
+.contact form button {
+    width: 300px; /* Samme bredde som input-feltene */
+    padding: 15px;
+    border: none;
+    background: #db0000;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+.contact form button:hover {
+    background: #ffffff;
+    color: #d10000;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: #ff0000;
+    margin: 40px auto;
+}
+
+.team {
+    background-color: #111111;
+    padding: 60px 20px;
+}
+
+.team h2 {
+    margin-bottom: 50px;
+    font-size: 50px;
+    color: #ce0202;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.team-member {
+    width: 300px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ff0000;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 28px;
+    color: #d30303;
+    margin: 10px 0;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #dddddd;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border-top: 2px solid #ff0000;
+    margin-top: 40px;
+}
